@@ -1,0 +1,19 @@
+.top-header {
+  height: 120px;
+}
+
+.header {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1.5em;
+  background-color: #b6bfe1;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+}
+
+.header h2 {
+  margin-top: 0.1em;
+}

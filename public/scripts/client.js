@@ -8,6 +8,13 @@ $(document).ready(function() {
 
   const data = [];
 
+  // takes unsafe characters and re-encodes the text to a safe representation
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const renderTweets = function(tweets) {
     // loops through tweets
     for (const tweet of tweets) {
@@ -28,7 +35,7 @@ $(document).ready(function() {
         <p class="user-handle">${tweetData.user.handle}</p>
       </header>
       <div class="tweet-content">
-        <p>${tweetData.content.text}</p>
+        <p>${escape(tweetData.content.text)}</p>
       </div>
       <footer>
         <span class="time-stamp">${timeago.format(tweetData.created_at)}</span>

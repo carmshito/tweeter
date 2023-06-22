@@ -68,7 +68,6 @@ $(document).ready(function() {
     event.preventDefault();
 
     const $formData = $('#tweet-form');
-    console.log($formData);
 
     const wordLimit = 140;
     const textInputLength = $('#tweet-text').val().length;
@@ -84,13 +83,13 @@ $(document).ready(function() {
     } else {
       // Serialize the form data
       const data = $formData.serialize();
-      console.log(data);
 
       // create an AJAX POST request in client.js that sends the form data to the server.
       $.post("/tweets", data)
         .then(res => {
           loadTweets();
           $('#tweet-text').val('');
+          $('.counter').val(wordLimit);
         })
         .catch(err => {
           console.log(err);

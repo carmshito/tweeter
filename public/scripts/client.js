@@ -69,9 +69,19 @@ $(document).ready(function() {
 
   renderTweets(data);
 
+  // submit tweet event
+  // add an event listener that listens for the submit event
+  $('#tweet-form').on('submit', (event) => {
+
+    // prevent the default behaviour of the submit event (data submission and page refresh)
+    event.preventDefault();
+    
+    // create an AJAX POST request in client.js that sends the form data to the server.
+    $.ajax("/tweets", {
+      method: "POST",
+      // Serialize the form data
+      data: $("#tweet-text").serialize(),
+    });
+    $('#tweet-text').val("");
+  });
 });
-
-
-
-
-

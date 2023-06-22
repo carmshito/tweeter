@@ -70,20 +70,32 @@ $(document).ready(function() {
     const $formData = $('#tweet-form');
     console.log($formData);
 
-    // Serialize the form data
-    const data = $formData.serialize();
-    console.log(data);
+    const wordLimit = 140;
+    const textInputLength = $('#tweet-text').val().length;
 
-    // create an AJAX POST request in client.js that sends the form data to the server.
-    $.post("/tweets", data)
-      .then(res => {
-        loadTweets();
-        $('#tweet-text').val('');
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // if data is empty
+    if (!textInputLength) {
+      alert('You need to write something down!');
+
+      // if tweet is exceeds max characters of 140
+    } else if (textInputLength > wordLimit) {
+      alert('Your tweet is too long! Please shorten it! 😋');
+    
+    } else {
+      // Serialize the form data
+      const data = $formData.serialize();
+      console.log(data);
+
+      // create an AJAX POST request in client.js that sends the form data to the server.
+      $.post("/tweets", data)
+        .then(res => {
+          loadTweets();
+          $('#tweet-text').val('');
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   });
-
 
 });

@@ -9,7 +9,7 @@ $(document).ready(function() {
   const data = [];
 
   // takes unsafe characters and re-encodes the text to a safe representation
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -50,8 +50,6 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  renderTweets(data);
-
   // function responsible for fetching tweets from /tweets
   const loadTweets = function() {
     const url = `http://localhost:8080/tweets`;
@@ -65,6 +63,7 @@ $(document).ready(function() {
     });
   };
 
+  // load tweets from database
   loadTweets();
 
   // submit tweet event
@@ -81,12 +80,20 @@ $(document).ready(function() {
 
     // if data is empty
     if (!textInputLength) {
-      alert('You need to write something down!');
+      $('#error-empty')
+        .slideDown()
+        .show()
+        .delay(3000)
+        .slideUp('slow');
 
       // if tweet is exceeds max characters of 140
     } else if (textInputLength > wordLimit) {
-      alert('Your tweet is too long! Please shorten it! 😋');
-    
+      $('#error-too-long')
+        .slideDown()
+        .show()
+        .delay(3000)
+        .slideUp('slow');
+
     } else {
       // Serialize the form data
       const data = $formData.serialize();
@@ -103,5 +110,4 @@ $(document).ready(function() {
         });
     }
   });
-
 });

@@ -65,6 +65,14 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <span id="error-empty" class="error-empty">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        Tell us what you're thinking about! 🤔
+      </span>
+      <span id="error-too-long" class="error-too-long">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        Please stay within the 140 character limit!
+      </span>
       <form method="POST" action="/tweets" class="tweet-form" id ="tweet-form">
         <textarea name="text" class="tweet-text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div class="button-counter">

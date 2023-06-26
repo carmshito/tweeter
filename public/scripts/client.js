@@ -16,10 +16,16 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets) {
+    
+    // empty all-tweets container to stop duplications of tweets
+    $('#all-tweets').empty();
+    
     // loops through tweets
     for (const tweet of tweets) {
+      
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
+      
       // takes return value and appends it to the tweets container
       $('#all-tweets').prepend($tweet);
     }

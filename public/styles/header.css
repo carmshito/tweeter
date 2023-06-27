@@ -1,19 +1,58 @@
-.top-header {
-  height: 120px;
-}
-
-.header {
+.main-header {
   display: flex;
+  width: 50%;
   height: 400px;
-  width: 100%;
+  margin-top: 175px;
+  margin-left: 50px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 1.5em;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background-color: #b6bfe1;
   background-image: url("https://www.transparenttextures.com/patterns/food.png");
 }
 
-.header h2 {
-  margin-top: 0.1em;
+.user-avatar {
+  padding-top: 1rem;
+}
+
+.account-holder-name {
+  margin-top: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.first-name {
+  font-weight: bolder;
+}
+
+.last-name {
+  font-weight: lighter;
+}
+
+/* ---- Media Queries ---- */
+
+@media only screen and (min-width: 1024px) {
+  .main-header {
+    margin-top: 175px;
+    margin-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+}
+
+@media only screen and (max-width: 1023px) {
+  .main-header {
+    margin-left: 0;
+    margin-top: 0;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 50px;
+    background-color: #4056A1;
+
+    .account-holder-name {
+      color: white;
+    }
+  }
 }

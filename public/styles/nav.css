@@ -6,9 +6,9 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   font-family: "Bungee", sans-serif;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-top: 1.5em;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
   position: fixed;
 }
 
@@ -22,7 +22,7 @@ nav {
   flex-direction: column;
   font-family: 'Source Sans 3', sans-serif;
   align-items: center;
-  padding-bottom: 1.5em;
+  padding-bottom: 1.5rem;
 }
 
 .bolded {
@@ -30,9 +30,17 @@ nav {
 }
 
 .nav-right p {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.3rem;
 }
 
 .nav-icon {
   color: burlywood;
+}
+
+/* ---- Media Queries ---- */
+
+@media only screen and (max-width: 1023px) {
+  nav {
+    background-color: transparent;
+  }
 }

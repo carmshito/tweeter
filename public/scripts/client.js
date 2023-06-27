@@ -6,8 +6,6 @@
 
 $(document).ready(function() {
 
-  const data = [];
-
   // takes unsafe characters and re-encodes the text to a safe representation
   const escape = function(str) {
     let div = document.createElement("div");

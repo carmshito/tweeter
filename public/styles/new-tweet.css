@@ -48,6 +48,11 @@
   width: 100%;
 }
 
+/* counter colour when characters exceed 140 */
+.over {
+  color: red;
+}
+
 /* tweet article */
 #all-tweets {
   display: flex;

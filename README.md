@@ -4,7 +4,7 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product
 
-![](https://github.com/carmshito/tweeter/blob/master/docs/tweeter-gif.gif?raw=true)
+![](https://github.com/carmshito/tweeter/blob/master/docs/tweeter.gif?raw=true)
 
 ## Getting Started
 
